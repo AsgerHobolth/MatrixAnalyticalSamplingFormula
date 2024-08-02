@@ -65,8 +65,8 @@ cat("Total probability:",sum(prbSmpl),"\n")
 ## (number of singletons, number of doubletons,
 ##  total number of mutations, probability of SFS)
 SmplMat <- cbind( SmplMat,SmplMat[,1]+SmplMat[,2] )
-colnames(SmplMat) <- c("singletons","doubletons","total","probability")
 ResMat <- cbind( SmplMat,prbSmpl )
+colnames(ResMat) <- c("singletons","doubletons","total","probability")
 print(ResMat)
 ##------------------------------------------------------------
 ## Plot the likelihood for 10 singletons and two doubletons
@@ -76,7 +76,7 @@ mutaRateV <- c(seq(0.1,4.5,len=lenMuta/2),seq(5,15,len=lenMuta/2))
 ResPrb <- rep(0,len=lenMuta)
 for (i in 1:lenMuta){
   SFSMdl <- SFSThree(mutaRate=mutaRateV[i])
-  PrbMdl <- ConvertEvoMdlToPrbMdl( SFSMdl )
+  PrbMdl <- EvoMdlToPrbMdl( SFSMdl )
   ResPrb[i] <- SmplPrb( c(10,2),PrbMdl=PrbMdl )
 }
 #pdf(file="ProbabilityCurveThree.pdf",width=8,height=6)
