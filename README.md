@@ -1,5 +1,5 @@
 # MatrixAnalyticalSamplingFormula
-## A matrix-analytical sampling formula for the infinite sites model
+## A matrix-analytical sampling formula for time-homogeneous coalescent processes under the infinite sites mutation model
 This README file explains how the R code for calculating the probability of a sample in a population genetic model is organized.
 
 The sampling formula in Hobolth et al (2024) is implemented in step 1-3 below.<br>
@@ -20,7 +20,7 @@ $initVec: Initial probability vector <br>
 $SMat: Sub-intensity matrix <br>
 $RMat: Reward matrix <br>
 $mutaRate: Mutation rate <br>
-An evolutionary model can be coded directly (described in 'A simple example' below), but we also provide models for analysis of the site frequency spectrum (described in 'Application: Analysis of SFS' below) or Beta-coalescent (described in 'Application: Analysis of Beta-coalescent' below).
+An evolutionary model can be coded directly (as described in 'Example A. A simple example' below), but we also provide models for analysis of the site frequency spectrum (as described in 'Example B. Application: Analysis of SFS' below) or Beta-coalescent (as described in 'Example C. Application: Analysis of Beta-coalescent' below).
 
 #### Step 2. Probability Model 
 The evolutionary model (object) is then converted into a probability model (object).<br>
